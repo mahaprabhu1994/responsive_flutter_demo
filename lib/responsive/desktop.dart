@@ -12,43 +12,7 @@ class desktop extends StatelessWidget {
         ),
         body: Row(
           children: [
-            //first Row
-            Expanded(
-              child: Column(
-                children: [
-                  //section 1
-
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Container(
-                      height: 500,
-                      width: double.infinity,
-                      color: Colors.amber[200],
-                      child: Text("section 1"),
-                    ),
-                  ),
-
-                  // //list sections 2
-                  // Expanded(
-                  //   child: ListView.builder(
-                  //     itemCount: 10,
-                  //     itemBuilder: (context, index) {
-                  //       return Padding(
-                  //         padding: const EdgeInsets.all(8.0),
-                  //         child: Container(
-                  //           color: Colors.brown,
-                  //           height: 100,
-                  //           child: Text("List items"),
-                  //         ),
-                  //       );
-                  //     },
-                  //   ),
-                  // )
-                ],
-              ),
-            ),
-
-            //secondRow
+            //Sidebar
             Container(
               width: 200,
               color: Colors.amber,
@@ -67,7 +31,43 @@ class desktop extends StatelessWidget {
                   },
                 ),
               ),
-            )
+            ),
+
+            //main section
+            Expanded(
+              child: Column(
+                children: [
+                  //section 1
+
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Container(
+                      height: 350,
+                      width: double.infinity,
+                      color: Colors.amber[200],
+                      child: Text("section 1"),
+                    ),
+                  ),
+
+                  // //list sections 2
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            color: Colors.brown,
+                            height: 100,
+                            child: Text("List items"),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ));
   }
